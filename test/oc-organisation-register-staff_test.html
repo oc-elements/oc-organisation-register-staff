@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>oc-organisation-register-staff test</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../oc-organisation-register-staff.html">
+  </head>
+  <body>
+
+    <test-fixture id="basic">
+      <template>
+        <oc-organisation-register-staff></oc-organisation-register-staff>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('oc-organisation-register-staff', function() {
+
+        test('instantiating the element works', function() {
+          var element = fixture('basic');
+          assert.equal(element.is, 'oc-organisation-register-staff');
+        });
+
+      });
+    </script>
+  </body>
+</html>
