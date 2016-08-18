@@ -3,7 +3,10 @@
   "description": "Element to register staff on the Ordercloud platform",
   "main": "oc-organisation-register-staff.html",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#^1.4.0",
+    "oc-authorization-api": "git://github.com/oc-elements/oc-authorization-api.git#1.x",
+    "oc-user-api": "git://github.com/oc-elements/oc-user-api.git#1.x",
+    "oc-register-staff": "git://github.com/oc-elements/oc-register-staff.git#1.x"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",

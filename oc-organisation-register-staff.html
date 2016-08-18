@@ -1,5 +1,9 @@
 <link rel="import" href="../polymer/polymer.html">
 
+<link rel="import" href="../oc-register-staff/oc-register-staff.html">
+<link rel="import" href="../oc-authorization-api/oc-authorization-api.html">
+<link rel="import" href="../oc-user-api/oc-user-api.html">
+
 <!--
 `oc-organisation-register-staff`
 Element to register staff on the Ordercloud platform
@@ -14,7 +18,12 @@ Element to register staff on the Ordercloud platform
         display: block;
       }
     </style>
-    <h2>Hello [[prop1]]</h2>
+
+    <oc-user-api id="userApi"></oc-user-api>
+    <oc-authorization-api id="authApi"></oc-authorization-api>
+
+    <oc-register-staff></oc-register-staff>
+
   </template>
 
   <script>
@@ -23,10 +32,12 @@ Element to register staff on the Ordercloud platform
       is: 'oc-organisation-register-staff',
 
       properties: {
-        prop1: {
-          type: String,
-          value: 'oc-organisation-register-staff',
-        },
+        organisationID : Number,
+        loading: {
+          type : Boolean,
+          notify: true
+        }
+
       },
 
     });
