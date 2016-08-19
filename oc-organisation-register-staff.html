@@ -56,12 +56,15 @@ Element to register staff on the Ordercloud platform
                 .then(function(request){
                   this._groups = request.response.results;
                 }.bind(this))
-                .catch(this.fire.bind(this, 'options_error', 'Could not create option set'))
+                .catch(this.fire.bind(this, 'options_error', 'Could not load user groups'))
                 .finally(this.set.bind(this, 'loading', false));
       },
 
       _registerStaff : function(e) {
-        console.log(e.detail);
+        this.$.userApi.createAccount(e.detail)
+                .catch(this.fire.bind(this, 'options_error', 'Could not register user'))
+                .finally(this.set.bind(this, 'loading', false));
+
       }
 
     });
