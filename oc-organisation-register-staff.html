@@ -52,6 +52,7 @@ Element to register staff on the Ordercloud platform
       },
 
       _getOrgGroups : function(organisationId){
+          this.loading = true;
         this.$.authApi.getOrganisationGroups(organisationId)
                 .then(function(request){
                   this._groups = request.response.results;
@@ -61,6 +62,7 @@ Element to register staff on the Ordercloud platform
       },
 
       _registerStaff : function(e) {
+          this.loading = true;
         this.$.userApi.createAccount(e.detail)
                 .catch(this.fire.bind(this, 'options_error', 'Could not register user'))
                 .finally(this.set.bind(this, 'loading', false));
