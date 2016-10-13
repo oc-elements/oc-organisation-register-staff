@@ -55,7 +55,7 @@ Element to register staff on the Ordercloud platform
           this.loading = true;
         this.$.authApi.getOrganisationGroups(organisationId)
                 .then(function(request){
-                  this._groups = request.response.results;
+                  this._groups = request.response.results.filter(function(obj){ if(obj.id !== 5) {return obj}})
                 }.bind(this))
                 .catch(this.fire.bind(this, 'options_error', 'Could not load user groups'))
                 .finally(this.set.bind(this, 'loading', false));
